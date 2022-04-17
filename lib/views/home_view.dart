@@ -62,7 +62,7 @@ class HomeView extends StatelessWidget {
                 ),
                 Text(
                   "Salam Vüqar \nArzuladığın işlərə bax",
-                  style: kPageTitleStyle,
+                  style: kPageTitleStyle.copyWith(fontSize: 30),
                 ),
                 const SizedBox(
                   height: 25,
@@ -112,7 +112,7 @@ class HomeView extends StatelessWidget {
                 SizedBox(height: 35.0),
                 Text(
                   "Popular Company",
-                  style: kTitleStyle,
+                  style: kTitleStyle.copyWith(fontSize: 25),
                 ),
                 SizedBox(height: 15.0),
                 Container(
@@ -143,6 +143,52 @@ class HomeView extends StatelessWidget {
                     },
                   ),
                 ),
+                const SizedBox(
+                  height: 35.0,
+                ),
+                Text(
+                  "Son Elanlar",
+                  style: kTitleStyle.copyWith(fontSize: 25),
+                ),
+                ListView.builder(
+                  itemCount: recentList.length,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    var recent = recentList[index];
+                    return Card(
+                      elevation: 0,
+                      margin: EdgeInsets.only(right: 18, top: 15),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      child: ListTile(
+                        leading: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              image: DecorationImage(
+                                  image: AssetImage("${recent.image}"),
+                                  fit: BoxFit.cover)),
+                        ),
+                        title: Text(
+                          "${recent.job}",
+                          style: kTitleStyle,
+                        ),
+                        subtitle: Text(
+                            "${recent.companyName} - ${recent.mainCriteria}"),
+                        trailing: const Icon(
+                          Icons.more_vert,
+                          color: Colors.deepOrange,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 35,
+                )
               ],
             ),
           ),
