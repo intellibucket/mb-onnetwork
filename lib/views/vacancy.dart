@@ -36,7 +36,7 @@ class Vacancy extends StatelessWidget {
           width: double.infinity,
           // margin: EdgeInsets.only(top: 50.0),
           padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 15.0),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40.0),
@@ -81,7 +81,7 @@ class Vacancy extends StatelessWidget {
                           .map(
                             (e) => Container(
                               margin: EdgeInsets.symmetric(horizontal: 5.0),
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                 horizontal: 8.0,
                                 vertical: 5.0,
                               ),
@@ -114,9 +114,9 @@ class Vacancy extends StatelessWidget {
                           color: kOrange,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
-                        tabs: [
-                          Tab(text: "Description"),
-                          Tab(text: "Company"),
+                        tabs: const [
+                          Tab(text: "Açıqlama"),
+                          Tab(text: "Şirkət"),
                         ],
                       ),
                     )
@@ -137,9 +137,9 @@ class Vacancy extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.0),
+        preferredSize: const Size.fromHeight(60.0),
         child: Container(
-          padding: EdgeInsets.only(left: 18.0, bottom: 25.0, right: 18.0),
+          padding: const EdgeInsets.only(left: 18.0, bottom: 25.0, right: 18.0),
           // margin: EdgeInsets.only(bottom: 25.0),
           color: Colors.white,
           child: Row(
@@ -151,7 +151,7 @@ class Vacancy extends StatelessWidget {
                   border: Border.all(color: kBlack.withOpacity(.5)),
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.bookmark_border,
                   color: kBlack,
                 ),
@@ -163,17 +163,13 @@ class Vacancy extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: kBlack,
+                      primary: company!.isEnrolled! ? Colors.green : kBlack,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-                    child: Text(
-                      "Apply for Job",
-                      style: kTitleStyle.copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
+                    child: company!.isEnrolled! ? Text("Applyed", style: kTitleStyle.copyWith(color: Colors.white) )
+                      : Text("Apply for Job", style: kTitleStyle.copyWith(color: Colors.white,),),
                   ),
                 ),
               )

@@ -1,9 +1,13 @@
+import 'dart:ffi';
+
 class Company {
   final String? companyName;
   final String? job;
   final String? city;
   final String? sallary;
   final String? image;
+  final bool? isMarked;
+  final bool? isEnrolled;
   final String? mainCriteria;
   final String? jobOpportunity;
   final String? aboutCompany;
@@ -16,6 +20,8 @@ class Company {
     this.sallary,
     this.tag,
     this.image,
+    this.isMarked,
+    this.isEnrolled,
     this.mainCriteria,
     this.jobOpportunity,
     this.jobResponsbilities,
@@ -35,6 +41,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: true ,
+    isMarked: true ,
     mainCriteria: "Baku",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -57,6 +65,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Full Time",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -79,6 +89,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Remote",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -101,6 +113,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Anywhere",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -124,6 +138,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Full Time",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -146,6 +162,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Remote",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -168,6 +186,8 @@ List<Company> companyList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Anywhere",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -193,6 +213,8 @@ List<Company> recentList = [
       "Office",
       "Baku",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Baku",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -215,6 +237,8 @@ List<Company> recentList = [
       "Office",
       "Baku",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Baku",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -237,6 +261,8 @@ List<Company> recentList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Anywhere",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -259,6 +285,8 @@ List<Company> recentList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Anywhere",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -281,6 +309,8 @@ List<Company> recentList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Remote",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -303,6 +333,8 @@ List<Company> recentList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: false ,
+    isMarked: false ,
     mainCriteria: "Remote",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
@@ -325,6 +357,8 @@ List<Company> recentList = [
       "Remote",
       "Anywhere",
     ],
+    isEnrolled: true ,
+    isMarked: true ,
     mainCriteria: "Remote",
     jobOpportunity:
     "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",

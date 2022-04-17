@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
     return Container(
       color: kSilver,
       child: SafeArea(
+          bottom: false,
           child: Scaffold(
         backgroundColor: kSilver,
         appBar: AppBar(
